@@ -1,40 +1,40 @@
-(function(){
+(function () {
     'use strict';
 
-    var path    = require('path');
+    var path = require('path');
     var helpers = require('yeoman-generator').test;
 
 
-    describe('ng-appgen generator', function () {
-      beforeEach(function (done) {
-        helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-          if (err) {
-            return done(err);
-          }
+    describe('jw-ng-gen generator', function () {
+        beforeEach(function (done) {
+            helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+                if (err) {
+                    return done(err);
+                }
 
-          this.app = helpers.createGenerator('ng-appgen:app', [
+                this.app = helpers.createGenerator('jw-ng-gen:app', [
             '../../app'
           ]);
-          done();
-        }.bind(this));
-      });
+                done();
+            }.bind(this));
+        });
 
-      it('creates expected files', function (done) {
-        var expected = [
+        it('creates expected files', function (done) {
+            var expected = [
           // add files you expect to exist here.
           '.jshintrc',
           '.editorconfig'
         ];
 
-        helpers.mockPrompt(this.app, {
-          'someOption': 'Y'
+            helpers.mockPrompt(this.app, {
+                'someOption': 'Y'
+            });
+            this.app.options['skip-install'] = true;
+            this.app.run({}, function () {
+                helpers.assertFiles(expected);
+                done();
+            });
         });
-        this.app.options['skip-install'] = true;
-        this.app.run({}, function () {
-          helpers.assertFiles(expected);
-          done();
-        });
-      });
     });
 
 })();
