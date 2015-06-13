@@ -12,7 +12,7 @@ _.mixin(_.str.exports());
 
 var ControllerGenerator = module.exports = function ControllerGenerator(args, options, config) {
 
-    cgUtils.getNameArg(this,args);
+    cgUtils.getNameArg(this, args);
     yeoman.generators.Base.apply(this, arguments);
 
 };
@@ -25,7 +25,7 @@ ControllerGenerator.prototype.askFor = function askFor() {
     var prompts = [];
     cgUtils.addNamePrompt(this, prompts, 'controller');
     this.prompt(prompts, function (props) {
-        if (props.name){
+        if (props.name) {
             this.name = props.name;
         }
         cgUtils.askForModuleAndDir('controller', this, false, cb);
