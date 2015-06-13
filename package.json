@@ -1,50 +1,39 @@
 {
-  "name": "generator-ng-appgen",
-  "version": "1.0.2",
-  "description": "Yeoman Generator for Enterprise grade Angular projects.",
-  "keywords": [
+    "name": "generator-jw-ng-gen",
+    "version": "1.0.0",
+    "description": "Yeoman Angular Generator based on Angular Best Practices(Angular Style Guide).",
+    "keywords": [
     "yeoman-generator",
     "angular"
   ],
-  "homepage": "https://github.com/tapas4java/generator-ng-appgen",
-  "bugs": {
-    "url": "https://github.com/tapas4java/generator-ng-appgen/issues"
-  },
-  "author": {
-    "name": "Tapas Jena",
-    "email": "tapas.friends@gmail.com",
-    "url": "https://www.anitechcs.com"
-  },
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tapas4java/generator-ng-appgen.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "underscore": "~1.7.0",
-    "underscore.string": "~2.3.3",
-    "yeoman-generator": "~0.17.7",
-    "chalk": "~1.0.0",
-    "ng-parse-module": "~0.1.0"
-  },
-  "devDependencies": {
-    "mocha": "~2.0.1"
-  },
-  "engines": {
-    "node": ">=0.10.32"
-  },
-  "license": "Apache License 2.0",
-  "_npmUser": {
-    "name": "tapas4java",
-    "email": "tapas.friends@gmail.com"
-  },
-  "maintainers": [
-    {
-      "name": "Tapas Jena",
-      "email": "tapas.friends@gmail.com"
+    "homepage": "https://github.com/jonathanwax/generator-jw-ng-gen",
+    "bugs": {
+        "url": "https://github.com/jonathanwax/generator-jw-ng-gen/issues"
+    },
+    "author": {
+        "name": "Jonathan Wax",
+        "email": "",
+        "url": "https://www.jonathanwax.com"
+    },
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonathanwax/generator-jw-ng-gen.git"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "dependencies": {
+        "underscore": "~1.7.0",
+        "underscore.string": "~2.3.3",
+        "yeoman-generator": "~0.17.7",
+        "chalk": "~1.0.0",
+        "ng-parse-module": "~0.1.0"
+    },
+    "devDependencies": {
+        "mocha": "~2.0.1"
+    },
+    "engines": {
+        "node": ">=0.10.32"
     }
-  ]
 }
