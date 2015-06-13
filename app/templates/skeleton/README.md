@@ -1,8 +1,6 @@
-#generator-ng-appgen
+>Yeoman Angular Generator based on Angular Best Practices (Angular Style Guide)
 
->Yeomen/Angular app generator for enterprise applications with best folder structure and end to end development workflow support.
-
-This generator follows the angular best practice guidelines for code organization and code generation strategy which are really helpful for huge enterprise grade applications. Thanks to @[Chris Gross](https://github.com/cgross), ng-appgen is built on top of his [generator-cg-angular](https://github.com/cgross/generator-cg-angular).
+This generator is used for modular Angular apps.
 
 Features
 ---------
@@ -31,15 +29,15 @@ Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
 
     npm install -g grunt-cli yo bower
 
-Next, install ng-appgen generator:
+Next, install jw-ng-gen generator:
 
-    npm install -g generator-ng-appgen
+    npm install -g generator-jw-ng-gen
 
 To create a project:
 
     mkdir testapp
     cd testapp
-    yo ng-appgen
+    yo jw-ng-gen
 NOTE: It will ask few questions like application name, router to use but you can just hit Enter as all prompts comes with default selection. Initially it will run `npm install` and `bower install` for downloadig all required dependent libraries for you.
 
 Boom! See your application in action:
@@ -54,7 +52,7 @@ Directory Structure
 
 All subgenerators prompt the user to specify where to save the new files.  Thus you can create any directory structure you desire, including nesting.  The generator will create a handful of files in the root of your project and application related files in **app** folder like `index.html`, `app.js`, and `app.less` etc.  You determine how the rest of the project will be structured.
 
-This is the default application structure which you will get by running `yo ng-appgen` command with app name as `testapp`.
+This is the default application structure which you will get by running `yo jw-ng-gen` command with app name as `testapp`.
 
     /testapp ............................... application root folder
         /app ............................... container for all application artefacts
@@ -151,7 +149,7 @@ When `grunt run` is running, any changed javascript files will be linted using J
 Code Generators
 -------------
 
-Modules allow you to more explicitly separate parts of your application.  Use the `yo ng-appgen:module my-module` command and specify a new subdirectory to place the module into.  Once you've created a module, running other subgenerators will now prompt you to select the module in which to place the new component.
+Modules allow you to more explicitly separate parts of your application.  Use the `yo jw-ng-gen:module my-module` command and specify a new subdirectory to place the module into.  Once you've created a module, running other subgenerators will now prompt you to select the module in which to place the new component.
 
 There are a set of subgenerators to initialize empty Angular components.  Each of these generators will:
 
@@ -164,13 +162,13 @@ There are generators for `directive`, `template`, `service`, `filter`, `module`,
 
 Running a generator:
 
-    yo ng-appgen:directive my-directive
-    yo ng-appgen:template my-template
-    yo ng-appgen:service my-service
-    yo ng-appgen:controller my-controller
-    yo ng-appgen:filter my-filter
-    yo ng-appgen:module my-module
-    yo ng-appgen:modal my-modal
+    yo jw-ng-gen:directive my-directive
+    yo jw-ng-gen:template my-template
+    yo jw-ng-gen:service my-service
+    yo jw-ng-gen:controller my-controller
+    yo jw-ng-gen:filter my-filter
+    yo jw-ng-gen:module my-module
+    yo jw-ng-gen:modal my-modal
 
 The name paramater passed (i.e. 'my-directive') will be used as the file names.  The generators will derive appropriate class names from this parameter (ex. 'my-directive' will convert to a class name of 'MyDirective').  Each sub-generator will ask for the folder(module) in which to create the new skeleton files. It will always prompt with default selection which is best for the application structure, we suggest not to change it. Just hit Enter.
 
@@ -212,3 +210,5 @@ Release History
 * 15/11/2014 - v1.0.2 - Css loading removed from index.html and few optimizations on specs.
 * 15/11/2014 - v1.0.1 - Few fixes including 'grunt build' issue and few optimizations on tests.
 * 01/11/2014 - v1.0.0 - Initial release of template as Yeoman generator.
+
+
