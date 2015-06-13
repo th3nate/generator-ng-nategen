@@ -41,11 +41,17 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
             {
                 "name": "common",
                 "file": path.join('app/common', 'common.js')
+            },
+            {
+                "name": "shell",
+                "file": path.join('app/shell', 'shell.js')
             }
         ];
         this.config.set('modules', defaultModules);
         this.config.save();
-        this.installDependencies({ skipInstall: options['skip-install'] });
+        this.installDependencies({
+            skipInstall: options['skip-install']
+        });
     });
 
     this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
@@ -64,37 +70,38 @@ AppGenerator.prototype.askFor = function askFor() {
 
     this.prompt(prompts, function (props) {
         this.appname = props.appname;
+        this.config.set('uirouter', true);
         cb();
     }.bind(this));
 };
 
-AppGenerator.prototype.askForUiRouter = function askFor() {
-    var cb = this.async();
-
-    var prompts = [{
-        name: 'router',
-        type:'list',
-        message: 'Which router would you like to use?',
-        default: 1,
-        choices: ['Standard Angular Router(ngRoute)', 'Angular UI Router(ui.router)']
-    }];
-
-    this.prompt(prompts, function (props) {
-        if (props.router === 'Angular UI Router(ui.router)') {
-            this.uirouter = true;
-            this.routerJs = 'bower_components/angular-ui-router/release/angular-ui-router.js';
-            this.routerModuleName = 'ui.router';
-            this.routerViewDirective = 'ui-view';
-        } else {
-            this.uirouter = false;
-            this.routerJs = 'bower_components/angular-route/angular-route.js';
-            this.routerModuleName = 'ngRoute';
-            this.routerViewDirective = 'ng-view';
-        }
-        this.config.set('uirouter',this.uirouter);
-        cb();
-    }.bind(this));
-};
+//AppGenerator.prototype.askForUiRouter = function askFor() {
+//    var cb = this.async();
+//
+//    var prompts = [{
+//        name: 'router',
+//        type: 'list',
+//        message: 'Which router would you like to use?',
+//        default: 1,
+//        choices: ['Standard Angular Router(ngRoute)', 'Angular UI Router(ui.router)']
+//    }];
+//
+//    this.prompt(prompts, function (props) {
+//        if (props.router === 'Angular UI Router(ui.router)') {
+//            this.uirouter = true;
+//            this.routerJs = 'bower_components/angular-ui-router/release/angular-ui-router.js';
+//            this.routerModuleName = 'ui.router';
+//            this.routerViewDirective = 'ui-view';
+//        } else {
+//            this.uirouter = false;
+//            this.routerJs = 'bower_components/angular-route/angular-route.js';
+//            this.routerModuleName = 'ngRoute';
+//            this.routerViewDirective = 'ng-view';
+//        }
+//        this.config.set('uirouter', this.uirouter);
+//        cb();
+//    }.bind(this));
+//};
 
 AppGenerator.prototype.app = function app() {
     this.directory('skeleton/', './');
