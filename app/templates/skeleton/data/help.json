@@ -1,18 +1,10 @@
 [
     {
-        "title": "Technical Help",
-        "content": "Contact us at tech@anitechcs.com"
+        "title": "Topic 1",
+        "content": "Topic 1 - Details"
     },
     {
-        "title" : "Billing Help",
-        "content" : "Contact us at billing@anitechcs.com"
-    },
-    {
-        "title" : "Enquiry Help",
-        "content" : "Contact us at info@anitechcs.com"
-    },
-    {
-        "title" : "Sales Help",
-        "content" : "Contact us at sales@anitechcs.com"
+        "title": "Topic 2",
+        "content": "Topic 2 - Details"
     }
 ]
