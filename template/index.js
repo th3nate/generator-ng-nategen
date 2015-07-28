@@ -14,7 +14,7 @@ _.mixin(_.str.exports());
 
 var TemplateGenerator = module.exports = function TemplateGenerator(args, options, config) {
 
-    cgUtils.getNameArg(this,args);
+    cgUtils.getNameArg(this, args);
     yeoman.generators.Base.apply(this, arguments);
 
 };
@@ -31,12 +31,12 @@ TemplateGenerator.prototype.askFor = function askFor() {
         }
     ];
 
-    cgUtils.addNamePrompt(this,prompts,'template');
+    cgUtils.addNamePrompt(this, prompts, 'template');
     this.prompt(prompts, function (props) {
-        if (props.name){
+        if (props.name) {
             this.name = props.name;
         }
-        this.route = url.resolve('',props.route);
+        this.route = url.resolve('', props.route);
         cgUtils.askForModuleAndDir('template', this, false, cb);
     }.bind(this));
 };
@@ -44,11 +44,11 @@ TemplateGenerator.prototype.askFor = function askFor() {
 TemplateGenerator.prototype.files = function files() {
 
     //this.ctrlname = _.camelize(_.classify(this.name)) + 'Controller';
-    this.templateName =  _.camelize(_.classify(this.name));
-
+    this.templateName = _.camelize(_.classify(this.name));
+    debugger;
     cgUtils.processTemplates(this.name, this.dir, 'template', this, null, null, this.module);
 
-    if (this.route && this.route.length > 0){
+    if (this.route && this.route.length > 0) {
         var templateUrl = this.dir + this.name + '.html';
         cgUtils.injectRoute(this.module.file, this.config.get('uirouter'), this.name, this.route, templateUrl, this);
     }
