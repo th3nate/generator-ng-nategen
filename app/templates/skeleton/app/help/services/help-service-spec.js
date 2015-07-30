@@ -13,9 +13,9 @@
             });
         });
 
-        it('should return the content', function () {
+        it('API getData()', function () {
 
-            expect(service.getHelpContent()).toBeDefined();
+            expect(service.getData()).toBeDefined();
 
         });
 

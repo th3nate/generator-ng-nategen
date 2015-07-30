@@ -17,9 +17,9 @@
             });
         });
 
-        it('should define helpContentList property', function () {
+        it('API should have getName function', function () {
 
-            expect(scope.helpContentList).toBeDefined();
+            expect(ctrl.getName).toBeDefined();
 
         });
 

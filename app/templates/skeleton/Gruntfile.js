@@ -184,15 +184,25 @@ module.exports = function (grunt) {
     * The Karma configurations.
     */
     karma: {
-      unit: {
-          configFile: 'test/karma.conf.js',
-          background: true
-      },
-      continuous: {
-          configFile: 'test/karma.conf.js',
-          singleRun: true
-      }
-    },
+            options: {
+                frameworks: ['jasmine'],
+                files: [ //this files data is also updated in the watch handler, if updated change there too
+          '<%= dom_munger.data.appjs %>',
+          'bower_components/angular-mocks/angular-mocks.js',
+          createFolderGlobs('*-spec.js')
+        ],
+                logLevel: 'ERROR',
+                reporters: ['mocha'],
+                autoWatch: false, //watching is handled by grunt-contrib-watch
+                singleRun: true
+            },
+            all_tests: {
+                browsers: ['PhantomJS', 'Chrome']
+            },
+            during_watch: {
+                browsers: ['PhantomJS']
+            },
+        },
 
     /**
     * Protractor configuration

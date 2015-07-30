@@ -15,8 +15,7 @@
 
         it('should ...', function () {
 
-            //TODO: Implement your service spec logic here
-            //expect(service.doSomething()).toEqual('something');
+            expect(service.doSomething()).toBeDefined();
 
         });
 
