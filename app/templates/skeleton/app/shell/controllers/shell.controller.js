@@ -12,17 +12,15 @@
         var vm = this;
 
         /***************** PRIVATE *******************/
-       var _name = 'HomeController';
+        var _model = {
+            name: ''
+        };
 
-        /**
-         * getName() - Private function
-         */
-        function _getName(val) {
-            return _name;
-        }
+        // init
+        _model.name = 'shellController';
 
         /****************** PUBLIC *******************/
-        vm.getName = _getName;
+        vm.model = _model;
 
     }
 

@@ -13,9 +13,9 @@
             });
         });
 
-        it('API getData()', function () {
+        it('API should have getData function', function () {
 
-            expect(service.getData()).toBeDefined();
+            expect(service.getData).toBeDefined();
 
         });
 

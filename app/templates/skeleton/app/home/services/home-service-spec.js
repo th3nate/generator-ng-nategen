@@ -15,7 +15,9 @@
 
         it('should return welcome message', function () {
 
-            expect(service.getMessage()).toEqual('Congratulations! Your app is fully up and running.');
+            var message = service.message;
+
+            expect(message).toEqual('Yeay! Your app is running.');
 
         });
 

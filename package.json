@@ -1,6 +1,6 @@
 {
     "name": "generator-jw-ng-gen",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Yeoman Angular Generator based on Angular Best Practices(Angular Style Guide).",
     "keywords": [
     "yeoman-generator",

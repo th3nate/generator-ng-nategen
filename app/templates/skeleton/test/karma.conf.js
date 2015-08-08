@@ -1,77 +1,72 @@
-module.exports = function(config){
+// Karma configuration
+// Generated on Mon Nov 10 2014 19:13:16 GMT-0500 (EST)
 
+module.exports = function (config) {
     config.set({
 
-        /**
-         * From where to look for files, starting with the location of this file.
-         */
-        basePath : '../',
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '../',
 
-        /**
-         * This is the list of file patterns to load into the browser during testing.
-         */
-        files : [
+
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['jasmine', 'mocha'],
+
+
+        // list of files / patterns to load in the browser
+        files: [
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
-			'bower_components/underscore/underscore.js',
-			'bower_components/angular-ui-router/release/angular-ui-router.js',
-			'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-			'bower_components/angular-ui-utils/ui-utils.js',
-			'bower_components/angular-animate/angular-animate.js',
-			'bower_components/restangular/dist/restangular.js',
-			'app/*/*.js',
-			'app/**/**/*.js',
-            'test/specs/**/**/*-spec.js'
+            'app/**/*.js',
+            'app/**/*-spec.js'
         ],
 
-        /**
-         * Exclude karma and protractor conf files
-         */
+
+        // list of files to exclude
         exclude: [
-            'test/karma-conf.js',
-            'test/protractor-conf.js'
         ],
 
-        /**
-         * Automatically runs tests when you save any test file
-         */
-        autoWatch : true,
 
-        /**
-         * Default reporter
-         */
-        reporters : ['mocha'],
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+            'app/common/directives/modform.directive.html': ['ng-html2js']
+        },
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'app/'
+            //moduleName: 'templates'
+        },
 
-        /**
-         * Frameworks to use for unit testing
-         */
-        frameworks : ['jasmine'],
 
-        /**
-         * Browser to use for running unit tests
-         * values: Chrome, Firefox, Opera, Safari, PhantomJS etc.
-         */
-        browsers : ['Chrome'],
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['mocha'],
 
-        /**
-         * Plugins required to run karma
-         */
-        plugins : [
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-mocha-reporter',
-            'karma-phantomjs-launcher'
-        ],
 
-        /**
-         * On which port should the browser connect, on which port is the test runner
-         * operating, and what is the URL path for the browser to use.
-         */
-        port : 9000,
-        runnerPort : 9001,
-        urlRoot : '/app'
+        // web server port
+        port: 9876,
 
+
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
+
+
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_ERROR,
+
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
+
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['PhantomJS'],
+
+
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: false
     });
-
 };
