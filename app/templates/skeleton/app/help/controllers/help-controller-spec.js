@@ -11,8 +11,7 @@
             inject(function ($rootScope, $controller) {
                 scope = $rootScope.$new();
                 ctrl = $controller('helpController', {
-                    $scope: scope,
-                    loadContent: []
+                    $scope: scope
                 });
             });
         });
