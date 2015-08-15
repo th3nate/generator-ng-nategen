@@ -32,19 +32,19 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
         var defaultModules = [
             {
                 "name": "home",
-                "file": path.join('app/home', 'home.js')
+                "file": path.join('app/home', 'home.module.js')
             },
             {
                 "name": "help",
-                "file": path.join('app/help', 'help.js')
+                "file": path.join('app/help', 'help.module.js')
             },
             {
                 "name": "common",
-                "file": path.join('app/common', 'common.js')
+                "file": path.join('app/common', 'common.module.js')
             },
             {
                 "name": "shell",
-                "file": path.join('app/shell', 'shell.js')
+                "file": path.join('app/shell', 'shell.module.js')
             }
         ];
         this.config.set('modules', defaultModules);

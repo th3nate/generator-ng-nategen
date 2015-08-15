@@ -77,7 +77,7 @@ This is the default application structure which you will get by running `yo jw-n
     			/templates ................. home module templates folder
     			    home-template.html ..... html file
     				home-template.less ..... less file
-    			home.js .................... home module main file
+    			home.module.js ............. home module main file
     			home.less .................. home module main less file
     		/help .......................... help module main folder
     		    /controllers ............... help module controllers folder
@@ -87,15 +87,23 @@ This is the default application structure which you will get by running `yo jw-n
     			/templates ................. help module templates folder
     			    help-template.html ..... html file
     				help-template.less ..... less file
-    			home.js .................... help module main file
+    			home.module.js ............. help module main file
     			home.less .................. help module main less file
     		/common ........................ common module main folder
     		    /controllers ............... common module controllers folder
     			    common-controller.js ... controller file
     			/services .................. common module services folder
     			    common-service.js ...... service file
-    			common.js .................. common module main file
+    			common.module.js ........... common module main file
     			common.less ................ common module main less file
+    		/shell ......................... shell module main folder
+    		    /controllers ............... shell module controllers folder
+    			    shell-controller.js .... controller file
+    			/templates ................. shell module templates folder
+    			    shell.html ............. service file
+                    shell.less ............. less file for template
+    			shell.module.js ............ shell module main file
+    			shell.module.less .......... shell module main less file
         /test .............................. container for all test artefacts
     		karma.conf.js .................. karma configuration file
     		protractor.conf.js ............. protractor configuration file
