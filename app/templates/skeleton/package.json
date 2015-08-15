@@ -1,9 +1,9 @@
 {
     "name": "app",
-    "version": "1.0.3",
+    "version": "0.0.1",
     "repository": {
-        "type": "git",
-        "url": "https://github.com/jonathanwax/generator-jw-ng-gen"
+        "type": "",
+        "url": ""
     },
     "devDependencies": {
         "chai": "^3.2.0",
