@@ -185,15 +185,13 @@ exports.askForModule = function (type, that, cb) {
 
         var i = choices.indexOf(props.module);
 
-        var fileName = modules[i].file.replace('.js', '.module.js');
+        var fileName = modules[i].file;
+
+        if (fileName.indexOf('.module') == 0) {
+            fileName = modules[i].file.replace('.js', '.module.js');
+        }
 
         var module = ngParseModule.parse(fileName);
-        //Tapas: No more required as we are not allowing user to add anything to main module
-        /*if (i === 0) {
-            module = mainModule;
-        } else {
-            module = ngParseModule.parse(modules[i-1].file);
-        }*/
 
         cb.bind(that)(module);
     }.bind(that));
