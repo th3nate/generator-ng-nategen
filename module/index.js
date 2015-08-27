@@ -60,6 +60,7 @@ ModuleGenerator.prototype.askFor = function askFor() {
 ModuleGenerator.prototype.files = function files() {
 
     var module = cgUtils.getParentModule(path.join(this.dir,'..'));
+
     module.dependencies.modules.push(_.camelize(this.name));
     module.save();
     this.log.writeln(chalk.green(' updating') + ' %s',path.basename(module.file));
@@ -70,7 +71,7 @@ ModuleGenerator.prototype.files = function files() {
     if (!modules) {
         modules = [];
     }
-    modules.push({name:_.camelize(this.name), file:path.join(this.dir,this.name + '.js')});
+    modules.push({name:_.camelize(this.name), file:path.join(this.dir,this.name + '.module.js')});
     this.config.set('modules', modules);
     this.config.save();
 };

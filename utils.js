@@ -191,6 +191,9 @@ exports.askForModule = function (type, that, cb) {
             fileName = modules[i].file.replace('.js', '.module.js');
         }
 
+        // handle path correctly - cross platform
+        fileName = fileName.replace(/\\/g,"/");
+
         var module = ngParseModule.parse(fileName);
 
         cb.bind(that)(module);
