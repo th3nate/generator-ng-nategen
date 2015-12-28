@@ -3,7 +3,7 @@
 
     // CREATE module
     angular
-        .module('sidenav', []);
+        .module('sidenav', ['common']);
 
 
     // Module's CONFIG

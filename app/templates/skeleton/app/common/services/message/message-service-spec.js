@@ -8,8 +8,8 @@
         beforeEach(function () {
             module('common');
 
-            inject(function (portfolioService) {
-                service = portfolioService;
+            inject(function (messageService) {
+                service = messageService;
             });
         });
 
