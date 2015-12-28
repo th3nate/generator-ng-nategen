@@ -18,21 +18,9 @@
         }
 
         /* @ngInject */
-        function NavPrivateController(userProfileService,taskService) {
+        function NavPrivateController() {
             console.log('NavPrivateController');
             var vm = this;
-            userProfileService.getData();
-            taskService.getData();
-            
-            
-            
-            
-            // expose service model to binding            
-            vm.model = userProfileService.model;
-            vm.notifications = taskService.model;
-            
-            //vm.approvedTasks = notificationService.approveTask;
-            //vm.notifications = notificationService.model;
         }
 
 
