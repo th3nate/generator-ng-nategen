@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('home', ['common', 'ui.sortable', 'gantt', 'gantt.table', 'gantt.movable', 'gantt.tooltips']);
+    angular.module('home', ['common']);
 
     angular
         .module('home')
