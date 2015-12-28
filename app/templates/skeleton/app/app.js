@@ -33,7 +33,7 @@
 
             /* Config: local storage */
             localStorageServiceProvider
-                .setPrefix('EchelonApp')
+                .setPrefix('MyApp')
                 .setStorageType('sessionStorage')
                 .setNotify(true, true);
 
@@ -45,7 +45,32 @@
     // RUN: App (module)
     angular
         .module('<%= _.camelize(appname) %>')
-        .run(function ($rootScope) {
+        .run(function ($log, $rootScope) {
+            
+            $log = $log.getInstance('app', true);
+            $log.debug("run()");
+
+            // moment.js locale (used by gantt)
+            // amMoment.changeLocale('he', {
+            //   week : {
+            //     dow : 0, // Monday is the first day of the week.
+            //     doy : 4 // The week that contains Jan 4th is the first week of the year.
+            //   }
+            // });
+
+            /* catch all state change requests and check authentication */
+            //function onStateChangeStart(event, toState, toParams, fromState, fromParams) {
+            //    var msg = "onStateChangeStart: from-" + fromState.name + " to-" + toState.name;
+            //    logger.log(msg);
+
+            //    // if use not authenticated - go to login state
+            //    if (toState.name !== "auth" && !authService.isAuthenticated) {
+            //        event.preventDefault();
+            //        $state.go('auth');
+            //    }
+            //}
+
+            //$rootScope.$on('$stateChangeStart', onStateChangeStart);
 
             $rootScope.safeApply = function (fn) {
                 var phase = $rootScope.$$phase;
