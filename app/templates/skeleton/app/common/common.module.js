@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('common', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'angular-loading-bar']);
+        .module('common', ['log.ex.uo', 'PubSub', 'ngAria', 'ui.bootstrap', 'ui.router', 'ngAnimate', 'angular-loading-bar', 'LocalStorageModule', 'angularMoment', 'nvd3']);
 
     angular
         .module('common')

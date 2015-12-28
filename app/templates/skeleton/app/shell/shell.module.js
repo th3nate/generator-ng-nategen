@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('shell', []);
+        .module('shell', ['common']);
 
     angular
         .module('shell')
@@ -10,6 +10,7 @@
 
             $stateProvider.state('shell', {
                 url: '',
+                abstract: true,
                 views: {
                     '': {
                         templateUrl: 'shell/templates/shell.html',

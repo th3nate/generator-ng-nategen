@@ -6,7 +6,10 @@
     /**
      * ShellController Object/function
      */
-    function ShellController() {
+    function ShellController($log) {
+        
+        $log = $log.getInstance('ShellController', true);
+        $log.debug("load()");
 
         // vm (view-model) is the object we bind to (this controller).
         var vm = this;
