@@ -36,7 +36,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
             this.name = props.name;
         }
         this.needtemplate = props.needtemplate;
-        cgUtils.askForModuleAndDir('directive', this, false, cb); //Tapas: no need to ask for own directory(this.needtemplate)
+        cgUtils.askForModuleAndDir('directive', this, true, cb); //Tapas: no need to ask for own directory(this.needtemplate)
     }.bind(this));
 
 };
