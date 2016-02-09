@@ -1,23 +1,25 @@
 (function () {
     'use strict';
 
-    /* JAVASCRIPT */
-
     /**
-     * <%= _.classify(name) %> Object/function
+     * <%= _.classify(name) %>
+     * @param  {[type]} name   [description]
      */
     function <%= _.classify(name) %> () {
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        // =============== PRIVATE ================= //
+        ///////////////////////////////////////////////
 
-        /**
-         * Directives link function
-         */
+        //-> Directive's link function
         function _link(scope, iElem, iAttrs, controllers) {
             // add logic here
         }
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        // =============== PUBLIC API ============== //
+        ///////////////////////////////////////////////
+        
         var directive = {
             restrict: 'E',
             replace: true,
@@ -32,7 +34,7 @@
 
     }
 
-    /* ANGULAR */
+    //-> ANGULAR
     angular
         .module('<%= appname %>')
         .directive('<%= _.camelize(name) %>', <%= _.classify(name) %> );

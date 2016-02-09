@@ -167,6 +167,10 @@ module.exports = function (grunt) {
             main: {
                 src: 'temp/app.full.js',
                 dest: 'dist/app.full.min.js'
+            },
+            options: {
+                report: 'min',
+                mangle: false
             }
         },
         htmlmin: {

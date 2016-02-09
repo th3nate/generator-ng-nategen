@@ -1,31 +1,38 @@
 (function () {
     'use strict';
 
-    /* JAVASCRIPT */
-
     /**
-     * <%= _.classify(name) %> Object/function
+     * <%= _.classify(name) %>
+     * @param  {[type]} name   [description]
      */
     function <%= _.classify(name) %> () {
 
-        // vm (view-model) is the object we bind to (this controller).
+        //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        // =============== PRIVATE ================= //
+        ///////////////////////////////////////////////
+
         var _someThing = true;
 
         /**
-         * doSomething() - Private function
+         * _doSomething() - Private function
+         * @return {N/A}
          */
         function _doSomething(val) {
             _someThing = val;
         }
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        // =============== PUBLIC API ============== //
+        ///////////////////////////////////////////////
+        
         vm.doSomething = _doSomething;
 
     }
 
+    //-> ANGULAR
     angular
         .module('<%= appname %>')
         .controller('<%= _.camelize(name) %>', <%= _.classify(name) %> );

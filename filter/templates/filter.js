@@ -1,25 +1,31 @@
 (function () {
     'use strict';
 
-    /* JAVASCRIPT */
-
     /**
-     * <%= _.classify(name) %> Object/function
+     * <%= _.classify(name) %>
+     * @param  {[type]} name   [description]
      */
     function <%= _.classify(name) %> () {
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        // =============== PRIVATE ================= //
+        ///////////////////////////////////////////////
 
 
-        /****************** PUBLIC *******************/
+
+        ///////////////////////////////////////////////
+        // =============== PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         //TODO: Implement your filter logic here
+        
         return function (input, arg) {
             return 'filter';
         };
 
     }
 
-    /* ANGULAR */
+    //-> ANGULAR
     angular
         .module('<%= appname %>')
         .filter('<%= _.camelize(name) %>', <%= _.classify(name) %> );

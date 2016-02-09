@@ -1,24 +1,24 @@
 {
-    "name": "generator-jw-ng-gen",
+    "name": "generator-ng-nategen",
     "version": "1.0.19",
     "description": "Yeoman Angular Generator based on Angular Best Practices(Angular Style Guide).",
     "keywords": [
     "yeoman-generator",
     "angular"
   ],
-    "homepage": "https://github.com/jonathanwax/generator-jw-ng-gen",
+    "homepage": "https://github.com/th3nate/generator-ng-nategen",
     "bugs": {
-        "url": "https://github.com/jonathanwax/generator-jw-ng-gen/issues"
+        "url": "https://github.com/th3nate/generator-ng-nategen/issues"
     },
     "author": {
-        "name": "Jonathan Wax",
+        "name": "Nate Havakuk",
         "email": "",
-        "url": "https://www.jonathanwax.com"
+        "url": ""
     },
     "main": "app/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathanwax/generator-jw-ng-gen.git"
+        "url": "https://github.com/th3nate/generator-ng-nategen.git"
     },
     "scripts": {
         "test": "mocha"
