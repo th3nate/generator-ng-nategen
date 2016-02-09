@@ -1,39 +1,39 @@
 {
-    "name": "generator-ng-nategen",
-    "version": "1.0.19",
-    "description": "Yeoman Angular Generator based on Angular Best Practices(Angular Style Guide).",
-    "keywords": [
+  "name": "generator-ng-nategen",
+  "version": "1.0.20",
+  "description": "Yeoman Angular Generator based on Angular Best Practices(Angular Style Guide).",
+  "keywords": [
     "yeoman-generator",
     "angular"
   ],
-    "homepage": "https://github.com/th3nate/generator-ng-nategen",
-    "bugs": {
-        "url": "https://github.com/th3nate/generator-ng-nategen/issues"
-    },
-    "author": {
-        "name": "Nate Havakuk",
-        "email": "",
-        "url": ""
-    },
-    "main": "app/index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/th3nate/generator-ng-nategen.git"
-    },
-    "scripts": {
-        "test": "mocha"
-    },
-    "dependencies": {
-        "underscore": "~1.7.0",
-        "underscore.string": "~2.3.3",
-        "yeoman-generator": "~0.17.7",
-        "chalk": "~1.0.0",
-        "ng-parse-module": "~0.1.0"
-    },
-    "devDependencies": {
-        "mocha": "~2.0.1"
-    },
-    "engines": {
-        "node": ">=0.10.32"
-    }
+  "homepage": "https://github.com/th3nate/generator-ng-nategen",
+  "bugs": {
+    "url": "https://github.com/th3nate/generator-ng-nategen/issues"
+  },
+  "author": {
+    "name": "Nate Havakuk",
+    "email": "",
+    "url": ""
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/th3nate/generator-ng-nategen.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "underscore": "~1.7.0",
+    "underscore.string": "~2.3.3",
+    "yeoman-generator": "~0.17.7",
+    "chalk": "~1.0.0",
+    "ng-parse-module": "~0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1"
+  },
+  "engines": {
+    "node": ">=0.10.32"
+  }
 }
