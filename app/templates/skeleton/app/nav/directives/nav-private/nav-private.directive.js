@@ -1,36 +1,39 @@
-(function () {
+(function() {
     'use strict';
-
-    /* JAVASCRIPT */
 
     /**
      * NavPrivate Object/function
      */
-    function NavPrivate () {
-        var vm = this;
-        /***************** PRIVATE *******************/
+    function NavPrivate($log) {
 
-        /**
-         * Directives link function
-         */
+        var vm = this;
+
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
+
+        //-> Directive's link function
         function _link(scope, iElem, iAttrs, controllers) {
             // add logic here
         }
 
-        /* @ngInject */
+        //-> Directive's controller function
         function NavPrivateController() {
-            console.log('NavPrivateController');
+            $log = $log.getInstance('NavPrivateController', true);
+            $log.debug("load()");
+
             var vm = this;
+
         }
 
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
 
-        
-        /****************** PUBLIC *******************/
         var directive = {
             restrict: 'E',
             replace: true,
-            scope: {
-            },
+            scope: {},
             templateUrl: 'nav/directives/nav-private/nav-private.directive.html',
             link: _link,
             controller: NavPrivateController,
@@ -42,9 +45,9 @@
 
     }
 
-    /* ANGULAR */
+    //-> ANGULAR
     angular
         .module('nav')
-        .directive('navPrivate', NavPrivate );
+        .directive('navPrivate', NavPrivate);
 
 })();

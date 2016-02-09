@@ -1,19 +1,17 @@
-(function () {
+(function() {
     'use strict';
 
-    // CREATE module
+    //-> CREATE module
     angular
         .module('sidenav', ['common']);
 
+    //-> Module's CONFIG
+    angular
+        .module('sidenav')
+        .config(function() {
 
-    // Module's CONFIG
-     
-        angular
-            .module('sidenav')
-            .config(function ($stateProvider) {
+            /* Add New States Above */
 
-                /* Add New States Above */
-
-            }); 
+        });
 
 })();

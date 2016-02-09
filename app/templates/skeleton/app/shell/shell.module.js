@@ -1,12 +1,14 @@
-(function () {
+(function() {
     'use strict';
 
+    //-> CREATE module
     angular
         .module('shell', ['common']);
 
+    //-> Module's CONFIG
     angular
         .module('shell')
-        .config(function ($stateProvider) {
+        .config(function($stateProvider) {
 
             $stateProvider.state('shell', {
                 url: '',

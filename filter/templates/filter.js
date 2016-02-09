@@ -5,7 +5,7 @@
      * <%= _.classify(name) %>
      * @param  {[type]} name   [description]
      */
-    function <%= _.classify(name) %> () {
+    function <%= _.classify(name) %>() {
 
         ///////////////////////////////////////////////
         // =============== PRIVATE ================= //
@@ -28,6 +28,6 @@
     //-> ANGULAR
     angular
         .module('<%= appname %>')
-        .filter('<%= _.camelize(name) %>', <%= _.classify(name) %> );
+        .filter('<%= _.camelize(name) %>', <%= _.classify(name) %>);
 
 })();

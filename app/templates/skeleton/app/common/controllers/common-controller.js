@@ -1,17 +1,18 @@
 (function () {
     'use strict';
 
-    /* JAVASCRIPT */
-
     /**
      * CommonController Object/function
      */
     function CommonController() {
 
-        // vm (view-model) is the object we bind to (this controller).
+        //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
+
         var _name = 'CommonController';
 
         /**
@@ -21,11 +22,15 @@
             return _name;
         }
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         vm.getName = _getName;
 
     }
 
+    //-> ANGULAR
     angular
         .module('common')
         .controller('commonController', CommonController);

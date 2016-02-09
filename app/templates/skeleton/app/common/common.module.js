@@ -1,15 +1,17 @@
-(function () {
-    'use strict';
+(function() {
+	'use strict';
 
-    angular
-        .module('common', ['log.ex.uo', 'PubSub', 'ngAria', 'ui.bootstrap', 'ui.router', 'ngAnimate', 'angular-loading-bar', 'LocalStorageModule', 'angularMoment', 'nvd3']);
+    //-> CREATE module
+	angular
+		.module('common', ['log.ex.uo', 'PubSub', 'ngAria', 'ui.bootstrap', 'ui.router', 'ngAnimate', 'angular-loading-bar', 'angularMoment', 'nvd3']);
 
-    angular
-        .module('common')
-        .config(function ($stateProvider) {
+    //-> Module's CONFIG
+	angular
+		.module('common')
+		.config(function() {
 
-            /* Add New States Above */
+			/* Add New States Above */
 
-        });
+		});
 
 })();

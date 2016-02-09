@@ -1,14 +1,14 @@
-(function () {
+(function() {
     'use strict';
 
     /**
      * <%= _.classify(name) %>
      * @param  {[type]} name   [description]
      */
-    function <%= _.classify(name) %> () {
+    function <%= _.classify(name) %>() {
 
         ///////////////////////////////////////////////
-        // =============== PRIVATE ================= //
+        //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
         //-> Always bind to an Object.property
@@ -25,9 +25,9 @@
         }
 
         ///////////////////////////////////////////////
-        // =============== PUBLIC API ============== //
+        //-> ============= PUBLIC API ============== //
         ///////////////////////////////////////////////
-        
+
         var service = {
             doSomething: _doSomething,
             get data() {
@@ -45,6 +45,6 @@
     //-> ANGULAR
     angular
         .module('<%= appname %>')
-        .service('<%= _.camelize(name) %>', <%= _.classify(name) %> );
+        .service('<%= _.camelize(name) %>', <%= _.classify(name) %>);
 
 })();

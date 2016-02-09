@@ -35,16 +35,20 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
                 "file": path.join('app/home', 'home.module.js')
             },
             {
-                "name": "help",
-                "file": path.join('app/help', 'help.module.js')
-            },
-            {
                 "name": "common",
                 "file": path.join('app/common', 'common.module.js')
             },
             {
                 "name": "shell",
                 "file": path.join('app/shell', 'shell.module.js')
+            },
+            {
+                "name": "nav",
+                "file": path.join('app/nav', 'nav.module.js')
+            },
+            {
+                "name": "sidenav",
+                "file": path.join('app/sidenav', 'sidenav.module.js')
             }
         ];
         this.config.set('modules', defaultModules);

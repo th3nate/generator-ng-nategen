@@ -1,23 +1,24 @@
-(function () {
+(function() {
     'use strict';
-
-    /* JAVASCRIPT */
 
     /**
      * NavPublic Object/function
      */
-    function NavPublic () {
+    function NavPublic() {
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
 
-        /**
-         * Directives link function
-         */
+        //-> Directive's link function
         function _link(scope, iElem, iAttrs, controllers) {
             // add logic here
         }
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         var directive = {
             restrict: 'E',
             replace: true,
@@ -32,9 +33,9 @@
 
     }
 
-    /* ANGULAR */
+    //-> ANGULAR
     angular
         .module('nav')
-        .directive('navPublic', NavPublic );
+        .directive('navPublic', NavPublic);
 
 })();

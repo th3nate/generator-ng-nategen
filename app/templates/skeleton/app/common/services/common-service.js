@@ -1,16 +1,16 @@
-(function () {
+(function() {
     'use strict';
-
-    /* JAVASCRIPT */
 
     /**
      * CommonService Object/function
      */
     function CommonService() {
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
 
-        //always bind to an object.property
+        //-> Always bind to an Object.property
         var _model = {
             data: null
         };
@@ -22,7 +22,10 @@
             // add logic here...
         }
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         var service = {
             doSomething: _doSomething,
             get data() {
@@ -37,7 +40,7 @@
 
     }
 
-    /* ANGULAR */
+    //-> ANGULAR
     angular
         .module('common')
         .factory('commonService', CommonService);

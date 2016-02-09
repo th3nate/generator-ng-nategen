@@ -5,13 +5,13 @@
      * <%= _.classify(name) %>
      * @param  {[type]} name   [description]
      */
-    function <%= _.classify(name) %> () {
+    function <%= _.classify(name) %>() {
 
         //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
 
         ///////////////////////////////////////////////
-        // =============== PRIVATE ================= //
+        //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
         var _someThing = true;
@@ -25,7 +25,7 @@
         }
 
         ///////////////////////////////////////////////
-        // =============== PUBLIC API ============== //
+        //-> ============= PUBLIC API ============== //
         ///////////////////////////////////////////////
         
         vm.doSomething = _doSomething;
@@ -35,6 +35,6 @@
     //-> ANGULAR
     angular
         .module('<%= appname %>')
-        .controller('<%= _.camelize(name) %>', <%= _.classify(name) %> );
+        .controller('<%= _.camelize(name) %>', <%= _.classify(name) %>);
 
 })();

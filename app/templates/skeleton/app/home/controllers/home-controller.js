@@ -1,17 +1,18 @@
-(function () {
+(function() {
     'use strict';
-
-    /* JAVASCRIPT */
 
     /**
      * HomeController Object/function
      */
     function HomeController(homeService) {
 
-        // vm (view-model) is the object we bind to (this controller).
+        //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
+
         var _name = 'HomeController';
 
         /**
@@ -21,12 +22,16 @@
             return _name;
         }
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         vm.getName = _getName;
         vm.service = homeService;
 
     }
 
+    //-> ANGULAR
     angular
         .module('home')
         .controller('homeController', HomeController);

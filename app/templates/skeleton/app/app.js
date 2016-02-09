@@ -1,76 +1,49 @@
 (function () {
     'use strict';
 
-    angular.module('<%= _.camelize(appname) %>', ['common', 'shell', 'home', 'help', 'auth', 'nav', 'sidenav']);
+    angular.module('<%= _.camelize(appname) %>', ['common', 'shell', 'home', 'nav', 'sidenav']);
 
-    // CONFIG: App (module)
+    ////////////////////////////
+    //-> CONFIG: App (module) //
+    ////////////////////////////
     angular
         .module('<%= _.camelize(appname) %>')
-        .config(function ($stateProvider, $httpProvider, localStorageServiceProvider, logExProvider, cfpLoadingBarProvider) {
+        .config(function ($stateProvider, $httpProvider, logExProvider, cfpLoadingBarProvider) {
 
-
-            /* configure log extender */
+            //-> configure log extender
             logExProvider.enableLogging(true);
             //logExProvider.restrictLogMethods(['log', 'info']);
             
-            
-            /* configure loading bar */
-            //cfpLoadingBarProvider.latencyThreshold = 100;
-            //cfpLoadingBarProvider.includeBar = false;
-            //cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner">Loading...</div>';
+            //-> configure loading bar
+            cfpLoadingBarProvider.latencyThreshold = 100;
+            cfpLoadingBarProvider.includeBar       = false;
+            cfpLoadingBarProvider.spinnerTemplate  = '<div><span class="fa fa-spinner">Loading...</div>';
 
+            //-> configure state
             $stateProvider.state("otherwise", {
                 url: "*path",
                 template: "",
                 controller: [
                     '$state',
                     function ($state) {
-                        $state.go('shell.auth.signin');
+                        $state.go('shell.home');
                     }
                 ]
             });
+
             /* Add New States Above */
-
-            /* Config: local storage */
-            localStorageServiceProvider
-                .setPrefix('MyApp')
-                .setStorageType('sessionStorage')
-                .setNotify(true, true);
-
-            /* add Authentication Interceptor */
-            $httpProvider.interceptors.push('authInterceptor');
 
         });
 
-    // RUN: App (module)
+    /////////////////////////
+    //-> RUN: App (module) //
+    /////////////////////////
     angular
         .module('<%= _.camelize(appname) %>')
         .run(function ($log, $rootScope) {
             
             $log = $log.getInstance('app', true);
             $log.debug("run()");
-
-            // moment.js locale (used by gantt)
-            // amMoment.changeLocale('he', {
-            //   week : {
-            //     dow : 0, // Monday is the first day of the week.
-            //     doy : 4 // The week that contains Jan 4th is the first week of the year.
-            //   }
-            // });
-
-            /* catch all state change requests and check authentication */
-            //function onStateChangeStart(event, toState, toParams, fromState, fromParams) {
-            //    var msg = "onStateChangeStart: from-" + fromState.name + " to-" + toState.name;
-            //    logger.log(msg);
-
-            //    // if use not authenticated - go to login state
-            //    if (toState.name !== "auth" && !authService.isAuthenticated) {
-            //        event.preventDefault();
-            //        $state.go('auth');
-            //    }
-            //}
-
-            //$rootScope.$on('$stateChangeStart', onStateChangeStart);
 
             $rootScope.safeApply = function (fn) {
                 var phase = $rootScope.$$phase;

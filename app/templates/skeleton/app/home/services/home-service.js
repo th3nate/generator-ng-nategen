@@ -1,24 +1,27 @@
-(function () {
+(function() {
     'use strict';
-
-    /* JAVASCRIPT */
 
     /**
      * HomeService Object/function
      */
     function HomeService() {
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
 
-        //always bind to an object.property
+        //-> Always bind to an Object.property
         var _model = {
             message: ''
         };
 
-        // initialize
+        //-> initialize
         _model.message = 'Yeay! Your app is running.';
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         var service = {
             get message() {
                 return _model.message;
@@ -29,9 +32,9 @@
 
     }
 
-    /* ANGULAR */
+    //-> ANGULAR
     angular
         .module('home')
-        .factory('homeService', HomeService);
+        .service('homeService', HomeService);
 
 })();

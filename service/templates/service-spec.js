@@ -8,7 +8,7 @@
         beforeEach(function () {
             module('<%= appname %>');
 
-            inject(function ( <%= _.camelize(name) %> ) {
+            inject(function ( <%= _.camelize(name) %>) {
                 service = <%= _.camelize(name) %> ;
             });
         });

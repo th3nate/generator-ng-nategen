@@ -1,19 +1,18 @@
-(function () {
+(function() {
     'use strict';
 
-    // CREATE module
+    //-> CREATE module
     angular
         .module('nav', ['common']);
 
 
-    // Module's CONFIG
-     
-        angular
-            .module('nav')
-            .config(function ($stateProvider) {
+    //-> Module's CONFIG
+    angular
+        .module('nav')
+        .config(function() {
 
-                /* Add New States Above */
+            /* Add New States Above */
 
-            }); 
+        });
 
 })();

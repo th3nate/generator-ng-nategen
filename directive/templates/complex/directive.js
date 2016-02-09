@@ -5,10 +5,10 @@
      * <%= _.classify(name) %>
      * @param  {[type]} name   [description]
      */
-    function <%= _.classify(name) %> () {
+    function <%= _.classify(name) %>() {
 
         ///////////////////////////////////////////////
-        // =============== PRIVATE ================= //
+        //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
         //-> Directive's link function
@@ -17,7 +17,7 @@
         }
 
         ///////////////////////////////////////////////
-        // =============== PUBLIC API ============== //
+        //-> ============= PUBLIC API ============== //
         ///////////////////////////////////////////////
         
         var directive = {
@@ -37,6 +37,6 @@
     //-> ANGULAR
     angular
         .module('<%= appname %>')
-        .directive('<%= _.camelize(name) %>', <%= _.classify(name) %> );
+        .directive('<%= _.camelize(name) %>', <%= _.classify(name) %>);
 
 })();

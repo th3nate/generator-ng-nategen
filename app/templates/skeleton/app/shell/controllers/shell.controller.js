@@ -1,28 +1,32 @@
-(function () {
+(function() {
     'use strict';
-
-    /* JAVASCRIPT */
 
     /**
      * ShellController Object/function
      */
     function ShellController($log) {
-        
+
         $log = $log.getInstance('ShellController', true);
         $log.debug("load()");
 
-        // vm (view-model) is the object we bind to (this controller).
+        //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
 
-        /***************** PRIVATE *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PRIVATE ================= //
+        ///////////////////////////////////////////////
+
         var _model = {
             name: ''
         };
 
-        // init
+        //-> init
         _model.name = 'shellController';
 
-        /****************** PUBLIC *******************/
+        ///////////////////////////////////////////////
+        //-> ============= PUBLIC API ============== //
+        ///////////////////////////////////////////////
+
         vm.model = _model;
 
     }
