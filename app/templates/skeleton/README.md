@@ -7,7 +7,7 @@ Features
 
 * Provides a directory structure geared towards large Angular projects.
     * Each controller, service, filter, and directive, template are placed in their own file within respective category folder.
-    * All files related to a conceptual unit(module) are placed together.  For example, the home module will contain all the required controllers, services, filters, templates, directives, LESS etc. in the same directory under folder home.
+    * All files related to a conceptual unit(module) are placed together.  For example, the home module will contain all the required controllers, services, filters, templates, directives, SASS etc. in the same directory under folder home.
     * All the application related artifacts will be available inside **app** folder.
     * All the specs(unit tests) and scenarios(e2e tests) are placed inside top level **test** folder.
     * Single **assets** folder for all your static resources.
@@ -17,7 +17,7 @@ Features
    * `grunt run` task allows you to run a simple development server with watch/livereload enabled.  Additionally, JSHint and the appropriate unit tests are run for the changed files.
 * Integrates Bower for package management
 * Includes Yeoman subgenerators for directives, services, templates, controllers, filters, and modules.
-* Integrates LESS and includes Bootstrap via the source LESS files allowing you to reuse Bootstrap vars/mixins/etc.
+* Integrates SASS and includes Bootstrap via the source SASS files allowing you to reuse Bootstrap vars/mixins/etc.
 * Easily Testable - Each sub-generator creates a skeleton unit test.  Unit tests can be run via `grunt test` and they run automatically during the grunt watch that is active during `grunt run`.
 * End to End testing - Protractor has been integrated and can be run via `grunt e2e`
 * Out of the box home, help and common modules with basic test coverage.
@@ -50,14 +50,14 @@ Boom! See your application in action:
 Directory Structure
 -------------
 
-All subgenerators prompt the user to specify where to save the new files.  Thus you can create any directory structure you desire, including nesting.  The generator will create a handful of files in the root of your project and application related files in **app** folder like `index.html`, `app.js`, and `app.less` etc.  You determine how the rest of the project will be structured.
+All subgenerators prompt the user to specify where to save the new files.  Thus you can create any directory structure you desire, including nesting.  The generator will create a handful of files in the root of your project and application related files in **app** folder like `index.html`, `app.js`, and `app.scss` etc.  You determine how the rest of the project will be structured.
 
 This is the default application structure which you will get by running `yo ng-nategen` command with app name as `testapp`.
 
     /testapp ............................... application root folder
         /app ............................... container for all application artefacts
     	    index.html ..................... main HTML file
-            app.less ....................... main app-wide styles
+            app.scss ....................... main app-wide styles
             app.js ......................... angular module initialization and route setup
     		/assets ........................ all static resources goes here
     		    /imgs ...................... place for all images
@@ -76,9 +76,9 @@ This is the default application structure which you will get by running `yo ng-n
     			    home-service.js ........ service file
     			/templates ................. home module templates folder
     			    home-template.html ..... html file
-    				home-template.less ..... less file
+    				home-template.scss ..... sass file
     			home.js .................... home module main file
-    			home.less .................. home module main less file
+    			home.scss .................. home module main sass file
     		/help .......................... help module main folder
     		    /controllers ............... help module controllers folder
     			    help-controller.js ..... controller file
@@ -86,16 +86,16 @@ This is the default application structure which you will get by running `yo ng-n
     			    help-service.js ........ service file
     			/templates ................. help module templates folder
     			    help-template.html ..... html file
-    				help-template.less ..... less file
+    				help-template.scss ..... sass file
     			home.js .................... help module main file
-    			home.less .................. help module main less file
+    			home.scss .................. help module main sass file
     		/common ........................ common module main folder
     		    /controllers ............... common module controllers folder
     			    common-controller.js ... controller file
     			/services .................. common module services folder
     			    common-service.js ...... service file
     			common.js .................. common module main file
-    			common.less ................ common module main less file
+    			common.scss ................ common module main sass file
         /test .............................. container for all test artefacts
     		karma.conf.js .................. karma configuration file
     		protractor.conf.js ............. protractor configuration file
@@ -153,9 +153,9 @@ Modules allow you to more explicitly separate parts of your application.  Use th
 
 There are a set of subgenerators to initialize empty Angular components.  Each of these generators will:
 
-* Create one or more skeleton files (javascript, LESS, html, spec etc) for the component type.
+* Create one or more skeleton files (javascript, SASS, html, spec etc) for the component type.
 * Update index.html and add the necessary `script` tags.
-* Update app.less and add the @import as needed.
+* Update app.scss and add the @import as needed.
 * For templates, update the app.js, adding the necessary route call if a route was entered in the generator prompts.
 
 There are generators for `directive`, `template`, `service`, `filter`, `module`, `controller` and `modal`.
@@ -177,14 +177,14 @@ The modal subgenerator is a convenient shortcut to create templates that work as
 Preconfigured Libraries
 -------------
 
-The new app will have a handful of preconfigured libraries included.  This includes Angular 1.3.2, Bootstrap 3.3, AngularUI Bootstrap, AngularUI Utils, FontAwesome 4.2, JQuery 2.1, Underscore 1.7, LESS 1.7, Restangular 1, Moment 2.5 and angular-loading-bar.  You may of course add to or remove any of these libraries.  But the work to integrate them into the app and into the build process has already been done for you.
+The new app will have a handful of preconfigured libraries included.  This includes Angular 1.3.2, Bootstrap 3.3, AngularUI Bootstrap, AngularUI Utils, FontAwesome 4.2, JQuery 2.1, Underscore 1.7, SASS 1.7, Restangular 1, Moment 2.5 and angular-loading-bar.  You may of course add to or remove any of these libraries.  But the work to integrate them into the app and into the build process has already been done for you.
 
 Build Process
 -------------
 
 The project will include a ready-made Grunt build that will:
 
-* Build all the LESS files into one minified CSS file.
+* Build all the SASS files into one minified CSS file.
 * Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your templates into Javascript.
 * Uses [grunt-ng-annotate](https://github.com/olov/ng-annotate) to preprocess all Angular injectable methods and make them minification safe.  Thus you don't have to use the array syntax.
 * Concatenates and minifies all Javascript into one file.

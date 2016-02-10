@@ -21,10 +21,10 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
                 marker: cgUtils.JS_MARKER,
                 template: '<script src="<%= filename %>"></script>'
             },
-            less: {
+            sass: {
                 relativeToModule: true,
-                file: '<%= module %>.less',
-                marker: cgUtils.LESS_MARKER,
+                file: '<%= module %>.scss',
+                marker: cgUtils.SASS_MARKER,
                 template: '@import "<%= filename %>";'
             }
         };

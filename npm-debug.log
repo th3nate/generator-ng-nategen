@@ -1,0 +1,70 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'version',
+1 verbose cli   '1.1.0' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 info git [ 'status', '--porcelain' ]
+5 verbose stack Error: Git working directory not clean.
+5 verbose stack M README.md
+5 verbose stack M app/index.js
+5 verbose stack M app/templates/skeleton/Gruntfile.js
+5 verbose stack M app/templates/skeleton/README.md
+5 verbose stack D app/templates/skeleton/app/app.less
+5 verbose stack D app/templates/skeleton/app/common/common.module.less
+5 verbose stack D app/templates/skeleton/app/home/home.module.less
+5 verbose stack D app/templates/skeleton/app/home/templates/home-template.less
+5 verbose stack M app/templates/skeleton/app/index.html
+5 verbose stack D app/templates/skeleton/app/nav/directives/nav-private/nav-private.directive.less
+5 verbose stack D app/templates/skeleton/app/nav/directives/nav-public/nav-public.directive.less
+5 verbose stack D app/templates/skeleton/app/nav/nav.module.less
+5 verbose stack D app/templates/skeleton/app/shell/shell.module.less
+5 verbose stack D app/templates/skeleton/app/shell/templates/shell.less
+5 verbose stack D app/templates/skeleton/app/sidenav/directives/sidenav/sidenav.directive.less
+5 verbose stack D app/templates/skeleton/app/sidenav/sidenav.module.less
+5 verbose stack M app/templates/skeleton/bower.json
+5 verbose stack M app/templates/skeleton/package.json
+5 verbose stack D directive/templates/complex/directive.less
+5 verbose stack D modal/templates/modal.less
+5 verbose stack D module/templates/module.less
+5 verbose stack D template/templates/template.less
+5 verbose stack M utils.js
+5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\version.js:171:21
+5 verbose stack     at ChildProcess.exithandler (child_process.js:204:7)
+5 verbose stack     at emitTwo (events.js:87:13)
+5 verbose stack     at ChildProcess.emit (events.js:172:7)
+5 verbose stack     at maybeClose (internal/child_process.js:821:16)
+5 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+6 verbose cwd C:\xampp\htdocs\generator-ng-nategen
+7 error Windows_NT 10.0.10240
+8 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "1.1.0"
+9 error node v4.2.6
+10 error npm  v2.14.12
+11 error Git working directory not clean.
+11 error M README.md
+11 error M app/index.js
+11 error M app/templates/skeleton/Gruntfile.js
+11 error M app/templates/skeleton/README.md
+11 error D app/templates/skeleton/app/app.less
+11 error D app/templates/skeleton/app/common/common.module.less
+11 error D app/templates/skeleton/app/home/home.module.less
+11 error D app/templates/skeleton/app/home/templates/home-template.less
+11 error M app/templates/skeleton/app/index.html
+11 error D app/templates/skeleton/app/nav/directives/nav-private/nav-private.directive.less
+11 error D app/templates/skeleton/app/nav/directives/nav-public/nav-public.directive.less
+11 error D app/templates/skeleton/app/nav/nav.module.less
+11 error D app/templates/skeleton/app/shell/shell.module.less
+11 error D app/templates/skeleton/app/shell/templates/shell.less
+11 error D app/templates/skeleton/app/sidenav/directives/sidenav/sidenav.directive.less
+11 error D app/templates/skeleton/app/sidenav/sidenav.module.less
+11 error M app/templates/skeleton/bower.json
+11 error M app/templates/skeleton/package.json
+11 error D directive/templates/complex/directive.less
+11 error D modal/templates/modal.less
+11 error D module/templates/module.less
+11 error D template/templates/template.less
+11 error M utils.js
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
