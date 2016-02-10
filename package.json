@@ -1,6 +1,6 @@
 {
   "name": "generator-ng-nategen",
-  "version": "1.0.20",
+  "version": "1.1.00",
   "description": "Yeoman Angular Generator based on Angular Best Practices(Angular Style Guide).",
   "keywords": [
     "yeoman-generator",
