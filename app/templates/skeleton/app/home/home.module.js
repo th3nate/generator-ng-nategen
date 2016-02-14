@@ -16,12 +16,15 @@
                         template: '<nav-private></nav-private>'
                     },
                     'shellSideView': {
-                        template: '<sidenav></sidenav>'
+                        template: '<!--sidenav></sidenav-->'
                     },
                     'shellContentView': {
                         templateUrl: 'home/templates/home-template.html',
                         controller: 'homeController',
                         controllerAs: 'vm'
+                    },
+                    'shellFooterView': {
+                        template: '<footer-main></footer-main>'
                     }
                 }
             });

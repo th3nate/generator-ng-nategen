@@ -1,11 +1,6 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../bower_components/font-awesome/scss/font-awesome";
-@import "../bower_components/bootstrap-sidebar/dist/css/sidebar.css";
-@import "../bower_components/angular-loading-bar/build/loading-bar.css";
-@import "../bower_components/bootstrap-sidebar/dist/css/sidebar.css";
-@import "../bower_components/font-awesome/css/font-awesome.css";
-@import "../bower_components/nvd3/build/nv.d3.css";
-@import "/app/assets/css/style.css"; /* Custom Stylesheet */
+@import "../app/assets/css/style"; /* Custom Stylesheet */
 @fa-font-path: "assets/fonts/font-awesome";
 
 /* Component SASS */

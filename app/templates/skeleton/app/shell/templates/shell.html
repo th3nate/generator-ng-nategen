@@ -1,14 +1,8 @@
-<div ui-view="shellNavView"></div>
-<div id="container" class="container-fluid height100 e-gray">
-    <div class="row e-row-margin" >
-        
-        <div ui-view="shellSideView" >
-          <!-- Side Menu for Module goes here -->
-        </div>
-           
-        <div id="content" ui-view="shellContentView">
-          <!-- Module Content goes here -->
-        </div>
-    </div>
-</div>
+<!-- Fixed navbar -->
+<nav ui-view="shellNavView" class="navbar navbar-default navbar-fixed-top"></nav>
+<!--div ui-view="shellSideView"></div-->
+<!-- Begin page content -->
+<div ui-view="shellContentView" class="container" id="content"></div>
+<!-- Begin Footer -->
+<footer ui-view="shellFooterView" class="footer"></footer>
 <message-panel></message-panel>

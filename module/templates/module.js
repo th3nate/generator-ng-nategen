@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     // CREATE module
@@ -7,24 +7,23 @@
 
 
     // Module's CONFIG
-    <%
-    if (!uirouter) { %>
-        angular
-            .module('<%= _.camelize(name) %>')
-            .config(function ($routeProvider) {
+    <% if (!uirouter) { %>
+    angular
+        .module('<%= _.camelize(name) %>')
+        .config(function() {
 
-                /* Add New Routes Above */
+            /* Add New Routes Above */
 
-            }); <%
+        }); <%
     } %> <%
     if (uirouter) { %>
-        angular
-            .module('<%= _.camelize(name) %>')
-            .config(function ($stateProvider) {
+    angular
+        .module('<%= _.camelize(name) %>')
+        .config(function() {
 
-                /* Add New States Above */
+            /* Add New States Above */
 
-            }); <%
+        }); <%
     } %>
 
 })();
