@@ -13,7 +13,6 @@
         "angular-bootstrap": "~0.13.4",
         "angular-cookies": "~1.4.5",
         "angular-loading-bar": "~0.8.0",
-        "angular-material": "~0.11.0",
         "angular-mocks": "~1.4.5",
         "angular-resource": "~1.4.5",
         "angular-ui-router": "~0.2.11",

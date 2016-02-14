@@ -79,7 +79,7 @@ module.exports = function (grunt) {
                     cacheLocation: 'temp/.sass-cache'
                 },
                 files: {
-                    'app/assets/css/style.css': 'app/app.scss'
+                    'temp/app.css': 'app/app.scss'
                 }
             }
         },
