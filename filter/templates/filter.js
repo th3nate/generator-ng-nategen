@@ -2,8 +2,7 @@
     'use strict';
 
     /**
-     * <%= _.classify(name) %>
-     * @param  {[type]} name   [description]
+     * <%= _.classify(name) %> - Filter
      */
     function <%= _.classify(name) %>() {
 

@@ -2,8 +2,7 @@
     'use strict';
 
     /**
-     * <%= _.classify(name) %>
-     * @param  {[type]} name   [description]
+     * <%= _.classify(name) %> - Directive
      */
     function <%= _.classify(name) %>() {
 
@@ -21,7 +20,7 @@
         ///////////////////////////////////////////////
         
         var directive = {
-            restrict: 'E',
+            restrict: 'EA',
             replace: true,
             scope: {
 

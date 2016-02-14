@@ -4,7 +4,7 @@
     /**
      * NavPrivate Object/function
      */
-    function NavPrivate($log) {
+    function NavPrivate() {
 
         var vm = this;
 
@@ -18,7 +18,7 @@
         }
 
         //-> Directive's controller function
-        function NavPrivateController() {
+        function NavPrivateController($log) {
             $log = $log.getInstance('NavPrivateController', true);
             $log.debug("load()");
 

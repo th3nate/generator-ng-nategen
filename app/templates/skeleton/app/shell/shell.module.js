@@ -18,6 +18,15 @@
                         templateUrl: 'shell/templates/shell.html',
                         controller: 'shellController',
                         controllerAs: 'vm'
+                    },
+                    'shellNavView@shell': {
+                        template: '<nav-private></nav-private>'
+                    },
+                    /*'shellSideView@shell': {
+                        template: '<sidenav></sidenav>'
+                    },*/
+                    'shellFooterView@shell': {
+                        template: '<footer-main></footer-main>'
                     }
                 }
             });

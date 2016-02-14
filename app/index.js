@@ -35,6 +35,10 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
                 "file": path.join('app/home', 'home.module.js')
             },
             {
+                "name": "about",
+                "file": path.join('app/about', 'about.module.js')
+            },
+            {
                 "name": "common",
                 "file": path.join('app/common', 'common.module.js')
             },

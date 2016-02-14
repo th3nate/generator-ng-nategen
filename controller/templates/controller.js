@@ -1,11 +1,13 @@
 (function() {
     'use strict';
-
+    
     /**
-     * <%= _.classify(name) %>
-     * @param  {[type]} name   [description]
+     * <%= _.classify(name) %> Object/function
      */
-    function <%= _.classify(className) %>() {
+    function <%= _.classify(className) %>($log) {
+
+        $log = $log.getInstance('<%= _.classify(className) %>', true);
+        $log.debug("Loaded");
 
         //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
@@ -14,18 +16,20 @@
         //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
-        var _model = {
-            name: ''
-        };
+        var _name = '<%= _.classify(className) %>';
 
-        //-> init
-        _model.name = '<%= _.classify(className) %>';
+        /**
+         * getName() - Private function
+         */
+        function _getName(val) {
+            return _name;
+        }
 
         ///////////////////////////////////////////////
         //-> ============= PUBLIC API ============== //
         ///////////////////////////////////////////////
 
-        vm.model = _model;
+        vm.getName = _getName;
 
     }
 

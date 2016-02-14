@@ -2,11 +2,11 @@
     'use strict';
 
     /**
-     * CommonController Object/function
+     * AboutController Object/function
      */
-    function CommonController($log) {
+    function AboutController($log, homeService) {
 
-        $log = $log.getInstance('CommonController', true);
+        $log = $log.getInstance('AboutController', true);
         $log.debug("Loaded");
 
         //-> vm (view-model) is the object we bind to (this controller).
@@ -16,7 +16,7 @@
         //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
-        var _name = 'CommonController';
+        var _name = 'HomeController';
 
         /**
          * getName() - Private function
@@ -30,12 +30,12 @@
         ///////////////////////////////////////////////
 
         vm.getName = _getName;
-
+        vm.service = homeService;
     }
 
     //-> ANGULAR
     angular
-        .module('common')
-        .controller('commonController', CommonController);
+        .module('about')
+        .controller('aboutController', AboutController);
 
 })();

@@ -3,19 +3,19 @@
 
     //-> CREATE module
     angular
-        .module('home', ['common']);
+        .module('about', ['common']);
 
     //-> Module's CONFIG
     angular
-        .module('home')
+        .module('about')
         .config(function($stateProvider) {
 
-            $stateProvider.state('shell.home', {
-                url: '/home',
+            $stateProvider.state('shell.about', {
+                url: '/about',
                 views: {
                     'shellContentView@shell': {
-                        templateUrl: 'home/templates/home-template.html',
-                        controller: 'homeController',
+                        templateUrl: 'about/templates/about.template.html',
+                        controller: 'aboutController',
                         controllerAs: 'vm'
                     }
                 }

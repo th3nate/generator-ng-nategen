@@ -7,7 +7,7 @@
     function ShellController($log) {
 
         $log = $log.getInstance('ShellController', true);
-        $log.debug("load()");
+        $log.debug("Loaded");
 
         //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
@@ -16,21 +16,24 @@
         //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
-        var _model = {
-            name: ''
-        };
+        var _name = 'ShellController';
 
-        //-> init
-        _model.name = 'shellController';
+        /**
+         * getName() - Private function
+         */
+        function _getName(val) {
+            return _name;
+        }
 
         ///////////////////////////////////////////////
         //-> ============= PUBLIC API ============== //
         ///////////////////////////////////////////////
 
-        vm.model = _model;
+        vm.getName = _getName;
 
     }
 
+    //-> ANGULAR
     angular
         .module('shell')
         .controller('shellController', ShellController);

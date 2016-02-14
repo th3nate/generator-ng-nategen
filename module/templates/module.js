@@ -1,13 +1,12 @@
 (function() {
     'use strict';
 
-    // CREATE module
+    //-> CREATE module
     angular
         .module('<%= _.camelize(name) %>', []);
 
-
-    // Module's CONFIG
     <% if (!uirouter) { %>
+    //-> Module's CONFIG
     angular
         .module('<%= _.camelize(name) %>')
         .config(function() {
@@ -15,15 +14,17 @@
             /* Add New Routes Above */
 
         }); <%
-    } %> <%
-    if (uirouter) { %>
+    } %> 
+    <% if (uirouter) { %>
+    //-> Module's CONFIG
     angular
         .module('<%= _.camelize(name) %>')
         .config(function() {
 
             /* Add New States Above */
 
-        }); <%
+        }); 
+        <%
     } %>
 
 })();

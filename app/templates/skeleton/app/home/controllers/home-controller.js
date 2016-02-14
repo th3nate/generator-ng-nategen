@@ -4,7 +4,10 @@
     /**
      * HomeController Object/function
      */
-    function HomeController(homeService) {
+    function HomeController($log, homeService) {
+
+        $log = $log.getInstance('HomeController', true);
+        $log.debug("Loaded");
 
         //-> vm (view-model) is the object we bind to (this controller).
         var vm = this;
@@ -28,7 +31,6 @@
 
         vm.getName = _getName;
         vm.service = homeService;
-
     }
 
     //-> ANGULAR
