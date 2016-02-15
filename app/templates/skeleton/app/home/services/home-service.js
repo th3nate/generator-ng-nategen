@@ -12,7 +12,8 @@
 
         //-> Always bind to an Object.property
         var _model = {
-            message: ''
+            message: '',
+            response: null
         };
 
         //-> initialize
@@ -25,6 +26,12 @@
         var service = {
             get message() {
                 return _model.message;
+            },
+            get response() {
+                return _model.response;
+            },
+            set response(val) {
+                _model.response = val;
             }
         };
 

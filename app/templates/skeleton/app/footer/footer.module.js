@@ -3,7 +3,7 @@
 
     // CREATE module
     angular
-        .module('footermain', []);
+        .module('footermain', ['common']);
 
     // Module's CONFIG
     angular

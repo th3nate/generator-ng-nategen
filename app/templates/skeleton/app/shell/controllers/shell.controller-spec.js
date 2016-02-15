@@ -16,9 +16,9 @@
             });
         });
 
-        it('model.name should be ShellController', function () {
+        it('API should have getName function', function () {
 
-            expect(ctrl.model.name).toEqual('shellController');
+            expect(ctrl.getName).toBeDefined();
 
         });
 

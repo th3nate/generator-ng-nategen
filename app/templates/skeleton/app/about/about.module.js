@@ -3,7 +3,7 @@
 
     //-> CREATE module
     angular
-        .module('about', ['common']);
+        .module('about', ['common', 'home']);
 
     //-> Module's CONFIG
     angular

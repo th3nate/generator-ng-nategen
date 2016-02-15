@@ -1,12 +1,12 @@
 (function () {
     'use strict';
 
-    describe('footer', function () {
+    describe('footermain', function () {
 
         var scope, compile;
 
         beforeEach(function () {
-            module('footer');
+            module('footermain');
 
             inject(function ($rootScope, $compile) {
                 scope = $rootScope.$new();

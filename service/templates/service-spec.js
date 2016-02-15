@@ -1,19 +1,19 @@
-(function () {
+(function() {
     'use strict';
 
-    describe('<%= _.camelize(name) %>', function () {
+    describe('<%= _.camelize(name) %>', function() {
 
         var service;
 
-        beforeEach(function () {
+        beforeEach(function() {
             module('<%= appname %>');
 
-            inject(function ( <%= _.camelize(name) %>) {
-                service = <%= _.camelize(name) %> ;
+            inject(function(<%= _.camelize(name) %>) {
+                service = <%= _.camelize(name) %>;
             });
         });
 
-        it('should ...', function () {
+        it('should ...', function() {
 
             //TODO: Implement your service spec logic here
             //expect(service.doSomething()).toEqual('something');

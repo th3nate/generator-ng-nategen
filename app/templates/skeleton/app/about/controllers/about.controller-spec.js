@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    describe('AboutController', function () {
+    describe('aboutController', function () {
 
         var scope, ctrl;
 
@@ -10,16 +10,15 @@
 
             inject(function ($rootScope, $controller) {
                 scope = $rootScope.$new();
-                ctrl = $controller('AboutController', {
+                ctrl = $controller('aboutController', {
                     $scope: scope
                 });
             });
         });
 
-        it('should ...', function () {
+        it('API should have getName function', function () {
 
-            //TODO: Implement your controller spec logic here
-            //expect(ctrl.doSomething()).toEqual('something');
+            expect(ctrl.getName).toBeDefined();
 
         });
 

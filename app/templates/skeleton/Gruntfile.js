@@ -248,7 +248,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', ['jshint', 'clean:before', 'sass', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
-    grunt.registerTask('run', ['dom_munger:read', 'jshint', 'sass', 'connect', 'watch']);
+    grunt.registerTask('run', ['dom_munger:read', 'jshint', 'karma', 'sass', 'connect', 'watch']);
     grunt.registerTask('test', ['dom_munger:read', 'karma']);
     grunt.registerTask('e2e', ['dom_munger:read', 'protractor']);
 

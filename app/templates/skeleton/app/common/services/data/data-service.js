@@ -2,12 +2,12 @@
     'use strict';
 
     /**
-     * DataService Object/function
+     * DataService - Data Layer
      */
-    function DataService($log, $http) {
+    function DataService($log, $q, $http) {
 
         $log = $log.getInstance('DataService', true);
-        $log.debug("load()");
+        $log.debug("Loaded");
 
         ///////////////////////////////////////////////
         //-> ============= PRIVATE ================= //
@@ -20,42 +20,51 @@
 
             $log.debug("get(" + url + ")");
 
-            var req = {
-                method: 'GET',
-                url: url
+            var defer   = $q.defer();
+            var promise = defer.promise;
+            var req     = {
+                method : 'GET',
+                url    : url
             };
 
-            return $http(req)
+            $http(req)
                 .then(function successCallback(data, status, headers, config) {
                     $log.debug("done(" + url + ")");
-                    return data;
+                    defer.resolve(data); // resolve the data back to app-data layer
                 }, function errorCallback(response) {
                     $log.error(response);
-                    return response;
+                    defer.reject(response); // reject the data incase of an error
                 });
 
+            return promise;
         }
 
+        /**
+         * _post() - Private function
+         */
         function _post(url, data, headers) {
 
             $log.debug("post(" + url + ")");
-
-            var req = {
-                method: 'POST',
-                url: url,
-                headers: headers,
-                data: data
+            
+            var defer   = $q.defer();
+            var promise = defer.promise;
+            var req     = {
+                method  : 'POST',
+                url     : url,
+                headers : headers,
+                data    : data
             };
 
-            return $http(req)
+            $http(req)
                 .then(function successCallback(data, status, headers, config) {
                     $log.debug("done(" + url + ")");
-                    return data;
+                    defer.resolve(data); // resolve the data back to app-data layer
                 }, function errorCallback(response) {
                     $log.error(response);
-                    return response;
+                    defer.reject(response); // reject the data incase of an error
                 });
 
+            return promise;
         }
 
         ///////////////////////////////////////////////
@@ -63,8 +72,8 @@
         ///////////////////////////////////////////////
 
         var service = {
-            get: _get,
-            post: _post
+            get  : _get,
+            post : _post
         };
 
         return service;

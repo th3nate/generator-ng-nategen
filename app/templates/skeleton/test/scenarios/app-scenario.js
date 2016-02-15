@@ -3,8 +3,6 @@
 
     describe('application <%= _.camelize(appname) %>', function() {
 
-        var helpLink = element(by.id('help'));
-        var helpHeader = element(by.id('helpHeader'));
         var logo = element(by.id('logo'));
         var homeHeader = element(by.binding('message'));
 
@@ -16,14 +14,7 @@
 
         it('should have a title', function() {
 
-            expect(browser.getTitle()).toEqual('ng-AppGen - Angular Application Generator');
-
-        });
-
-        it('should navigate to help screen on click of help link', function() {
-
-            helpLink.click();
-            expect(helpHeader.getText()).toEqual('Help Needed?');
+            expect(browser.getTitle()).toBeDefined();
 
         });
 
