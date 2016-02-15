@@ -16,8 +16,8 @@
 
             //-> configure loading bar
             cfpLoadingBarProvider.latencyThreshold = 100;
-            cfpLoadingBarProvider.includeBar = false;
-            cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner">Loading...</div>';
+            // cfpLoadingBarProvider.includeBar       = false;
+            // cfpLoadingBarProvider.spinnerTemplate  = '<div><span class="fa fa-spinner">Loading...</div>';
 
             //-> Translation Config
             $translateProvider.useLoader('$translatePartialLoader', {
