@@ -8,27 +8,27 @@ var pkg = require('./package.json');
 //this method is used to create a set of inclusive patterns for all subdirectories
 //skipping node_modules, bower_components, dist, and any .dirs
 //This enables users to create any directory structure they desire.
-var createFolderGlobs = function (fileTypePatterns) {
+var createFolderGlobs = function(fileTypePatterns) {
     fileTypePatterns = Array.isArray(fileTypePatterns) ? fileTypePatterns : [fileTypePatterns];
     var ignore = ['node_modules', 'bower_components', 'dist', 'temp', 'test', 'data', 'assets'];
     var fs = require('fs');
     return fs.readdirSync(process.cwd())
-        .map(function (file) {
+        .map(function(file) {
             if (ignore.indexOf(file) !== -1 || file.indexOf('.') === 0 || !fs.lstatSync(file).isDirectory()) {
                 return null;
             } else {
-                return fileTypePatterns.map(function (pattern) {
+                return fileTypePatterns.map(function(pattern) {
                     return file + '/**/' + pattern;
                 });
             }
         })
-        .filter(function (patterns) {
+        .filter(function(patterns) {
             return patterns;
         })
         .concat(fileTypePatterns);
 };
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
                 options: {
                     module: pkg.name,
                     htmlmin: '<%= htmlmin.main.options %>',
-                    url: function (url) {
+                    url: function(url) {
                         return url.replace('app/', '');
                     }
                 },
@@ -98,50 +98,40 @@ module.exports = function (grunt) {
         },
         copy: {
             main: {
-                files: [
-                    {
+                files: [{
                         cwd: 'app',
                         src: ['assets/**/*'],
                         dest: 'dist/',
                         expand: true
-                    }
-          /*{src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
-          {src: ['bower_components/bootstrap/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}*/
-        ]
+                }]
             }
         },
         dom_munger: {
             read: {
                 options: {
-                    read: [
-                        {
-                            selector: 'script[data-concat!="false"]',
-                            attribute: 'src',
-                            writeto: 'appjs',
-                            isPath: true
-                        },
-                        {
-                            selector: 'link[rel="stylesheet"][data-concat!="false"]',
-                            attribute: 'href',
-                            writeto: 'appcss'
-                        }
-          ]
+                    read: [{
+                        selector: 'script[data-concat!="false"]',
+                        attribute: 'src',
+                        writeto: 'appjs',
+                        isPath: true
+                    }, {
+                        selector: 'link[rel="stylesheet"][data-concat!="false"]',
+                        attribute: 'href',
+                        writeto: 'appcss'
+                    }]
                 },
                 src: 'app/index.html'
             },
             update: {
                 options: {
                     remove: ['script[data-remove!="false"]', 'link[data-remove!="false"]'],
-                    append: [
-                        {
-                            selector: 'body',
-                            html: '<script src="app.full.min.js"></script>'
-                        },
-                        {
-                            selector: 'head',
-                            html: '<link rel="stylesheet" href="app.full.min.css">'
-                        }
-          ]
+                    append: [{
+                        selector: 'body',
+                        html: '<script src="app.full.min.js"></script>'
+                    }, {
+                        selector: 'head',
+                        html: '<link rel="stylesheet" href="app.full.min.css">'
+                    }]
                 },
                 src: 'app/index.html',
                 dest: 'dist/index.html'
@@ -178,35 +168,20 @@ module.exports = function (grunt) {
         htmlmin: {
             main: {
                 options: {
-                    collapseBooleanAttributes: true,
-                    collapseWhitespace: true,
-                    removeAttributeQuotes: true,
-                    removeComments: true,
-                    removeEmptyAttributes: true,
-                    removeScriptTypeAttributes: true,
-                    removeStyleLinkTypeAttributes: true
+                    collapseBooleanAttributes     : true,
+                    collapseWhitespace            : true,
+                    removeAttributeQuotes         : true,
+                    removeComments                : true,
+                    removeEmptyAttributes         : true,
+                    removeScriptTypeAttributes    : true,
+                    removeStyleLinkTypeAttributes : true
                 },
                 files: {
                     'dist/index.html': 'dist/index.html'
                 }
             }
         },
-
-        //Imagemin has issues on Windows.
-        //To enable imagemin:
-        // - "npm install grunt-contrib-imagemin"
-        // - Comment in this section
-        // - Add the "imagemin" task after the "htmlmin" task in the build task alias
-        //imagemin: {
-        //  main:{
-        //    files: [{
-        //      expand: true, cwd:'dist/',
-        //      src:['**/{*.png,*.jpg}'],
-        //      dest: 'dist/'
-        //    }]
-        //  }
-        //},
-
+        
         /**
          * The Karma configurations.
          */
@@ -214,10 +189,10 @@ module.exports = function (grunt) {
             options: {
                 frameworks: ['jasmine'],
                 files: [ //this files data is also updated in the watch handler, if updated change there too
-          '<%= dom_munger.data.appjs %>',
-          'bower_components/angular-mocks/angular-mocks.js',
-          createFolderGlobs('*-spec.js')
-        ],
+                    '<%= dom_munger.data.appjs %>',
+                    'bower_components/angular-mocks/angular-mocks.js',
+                    createFolderGlobs('*-spec.js')
+                ],
                 logLevel: 'ERROR',
                 reporters: ['mocha'],
                 autoWatch: false, //watching is handled by grunt-contrib-watch
@@ -228,7 +203,7 @@ module.exports = function (grunt) {
             },
             during_watch: {
                 browsers: ['PhantomJS']
-            },
+            }
         },
 
         /**
@@ -248,11 +223,11 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', ['jshint', 'clean:before', 'sass', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
-    grunt.registerTask('run', ['dom_munger:read', 'jshint', 'karma', 'sass', 'connect', 'watch']);
+    grunt.registerTask('run', ['dom_munger:read', 'karma', 'jshint', 'sass', 'connect', 'watch']);
     grunt.registerTask('test', ['dom_munger:read', 'karma']);
     grunt.registerTask('e2e', ['dom_munger:read', 'protractor']);
 
-    grunt.event.on('watch', function (action, filepath) {
+    grunt.event.on('watch', function(action, filepath) {
         //https://github.com/gruntjs/grunt-contrib-watch/issues/156
 
         var tasksToRun = [];
