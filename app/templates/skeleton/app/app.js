@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('<%= _.camelize(appname) %>', ['common', 'shell', 'home', 'nav', 'sidenav', 'about']);
+    angular.module('<%= _.camelize(appname) %>', ['common', 'shell', 'home', 'nav', 'sidenav', 'about', 'footermain']);
 
     ////////////////////////////
     //-> CONFIG: App (module) //
