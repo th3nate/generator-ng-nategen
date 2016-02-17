@@ -49,7 +49,7 @@ ServiceGenerator.prototype.files = function files() {
     if (this.isCommand) {
         configName = 'commandComplexTemplates';
         defaultDir = 'templates/complex';
-        suffix     = 'command';
+        suffix     = 'service';
     }
 
     this.htmlPath = path.join(this.dir, this.name + '.service.html').replace(/\\/g, '/');
