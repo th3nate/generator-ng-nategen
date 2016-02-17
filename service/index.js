@@ -45,14 +45,16 @@ ServiceGenerator.prototype.files = function files() {
 
     var configName = 'serviceSimpleTemplates';
     var defaultDir = 'templates/simple';
+    var suffix     = 'service';
     if (this.isCommand) {
         configName = 'serviceComplexTemplates';
         defaultDir = 'templates/complex';
+        suffix     = 'command';
     }
 
     this.htmlPath = path.join(this.dir, this.name + '.service.html').replace(/\\/g, '/');
     this.htmlPath = this.htmlPath.replace('app/', '');
 
-    cgUtils.processTemplates(this.name, this.dir, 'service', this, defaultDir, configName, this.module);
+    cgUtils.processTemplates(this.name, this.dir, suffix, this, defaultDir, configName, this.module);
 
 };
