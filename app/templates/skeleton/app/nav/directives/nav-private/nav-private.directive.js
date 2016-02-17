@@ -4,7 +4,7 @@
     /**
      * NavPrivate Object/function
      */
-    function NavPrivate() {
+    function NavPrivate(appDateService) {
 
         var vm = this;
 
@@ -15,14 +15,16 @@
         //-> Directive's link function
         function _link(scope, iElem, iAttrs, controllers) {
             // add logic here
+        
         }
 
         //-> Directive's controller function
-        function NavPrivateController($log) {
+        function NavPrivateController($scope, $log, $state) {
             $log = $log.getInstance('NavPrivateController', true);
             $log.debug("load()");
 
             var vm = this;
+            vm.appDateService = appDateService;
 
         }
 

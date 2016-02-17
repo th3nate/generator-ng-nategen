@@ -2,24 +2,27 @@
     'use strict';
 
     /**
-     * AppDate - Service
+     * AppDateService - Service
      */
-    function AppDate($q, $log, dataService) {
+    function AppDateService($q, $log, dataService) {
 
         ///////////////////////////////////////////////
         //-> ============= PRIVATE ================= //
         ///////////////////////////////////////////////
 
-        function _doSomething(){
+        function _doSomething() {
             // Do Something...
         }
+
+        var _menu = [{ name: 'home', state: 'shell.home' }, { name: 'about', state: 'shell.about' }];
 
         ///////////////////////////////////////////////
         //-> ============= PUBLIC API ============== //
         ///////////////////////////////////////////////
 
         var service = {
-            doSomething: _doSomething
+            doSomething: _doSomething,
+            menu: _menu
         };
 
         return service;
@@ -29,6 +32,6 @@
     //-> ANGULAR
     angular
         .module('common')
-        .service('appDate', AppDate);
+        .service('appDateService', AppDateService);
 
 })();

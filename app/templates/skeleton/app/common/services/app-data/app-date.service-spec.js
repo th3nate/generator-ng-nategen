@@ -1,15 +1,15 @@
 (function () {
     'use strict';
 
-    describe('appDate', function () {
+    describe('appDateService', function () {
 
         var service;
 
         beforeEach(function () {
             module('common');
 
-            inject(function (appDate) {
-                service = appDate;
+            inject(function (appDateService) {
+                service = appDateService;
             });
         });
 

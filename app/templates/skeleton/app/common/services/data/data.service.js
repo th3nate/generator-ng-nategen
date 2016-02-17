@@ -20,9 +20,9 @@
 
             $log.debug("get(" + url + ")");
 
-            var defer   = $q.defer();
+            var defer = $q.defer();
             var promise = defer.promise;
-            var req     = {
+            var req = {
                 method : 'GET',
                 url    : url
             };
@@ -45,14 +45,14 @@
         function _post(url, data, headers) {
 
             $log.debug("post(" + url + ")");
-            
-            var defer   = $q.defer();
+
+            var defer = $q.defer();
             var promise = defer.promise;
-            var req     = {
-                method  : 'POST',
-                url     : url,
-                headers : headers,
-                data    : data
+            var req = {
+                method: 'POST',
+                url: url,
+                headers: headers,
+                data: data
             };
 
             $http(req)
@@ -72,8 +72,8 @@
         ///////////////////////////////////////////////
 
         var service = {
-            get  : _get,
-            post : _post
+            get: _get,
+            post: _post
         };
 
         return service;

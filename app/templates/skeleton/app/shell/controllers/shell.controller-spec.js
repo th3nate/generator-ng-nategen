@@ -11,7 +11,7 @@
             inject(function ($rootScope, $controller) {
                 scope = $rootScope.$new();
                 ctrl = $controller('shellController', {
-                    $scope: scope
+                    $scope: scope 
                 });
             });
         });

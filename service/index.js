@@ -12,7 +12,7 @@ _.mixin(_.str.exports());
 
 var ServiceGenerator = module.exports = function ServiceGenerator(args, options, config) {
 
-    cgUtils.getNameArg(this,args);
+    cgUtils.getNameArg(this, args);
     yeoman.generators.Base.apply(this, arguments);
 
 };
@@ -22,18 +22,37 @@ util.inherits(ServiceGenerator, yeoman.generators.Base);
 ServiceGenerator.prototype.askFor = function askFor() {
     var cb = this.async();
 
-    var prompts = [];
-    cgUtils.addNamePrompt(this,prompts,'service');
-    this.prompt(prompts, function (props) {
-        if (props.name){
+    var prompts = [{
+        type: 'confirm',
+        name: 'isCommand',
+        message: 'Will this service act as a command?',
+        default: false
+    }];
+
+    cgUtils.addNamePrompt(this, prompts, 'service');
+
+    this.prompt(prompts, function(props) {
+        if (props.name) {
             this.name = props.name;
         }
-        cgUtils.askForModuleAndDir('service', this, false, cb);
+        this.isCommand = props.isCommand;
+        cgUtils.askForModuleAndDir('service', this, true, cb); //Tapas: no need to ask for own directory(this.isCommand)
     }.bind(this));
+
 };
 
 ServiceGenerator.prototype.files = function files() {
 
-    cgUtils.processTemplates(this.name, this.dir, 'service', this, null, null, this.module);
+    var configName = 'serviceSimpleTemplates';
+    var defaultDir = 'templates/simple';
+    if (this.isCommand) {
+        configName = 'serviceComplexTemplates';
+        defaultDir = 'templates/complex';
+    }
+
+    this.htmlPath = path.join(this.dir, this.name + '.service.html').replace(/\\/g, '/');
+    this.htmlPath = this.htmlPath.replace('app/', '');
+
+    cgUtils.processTemplates(this.name, this.dir, 'service', this, defaultDir, configName, this.module);
 
 };

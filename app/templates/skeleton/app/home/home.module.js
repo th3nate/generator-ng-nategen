@@ -14,7 +14,7 @@
                 url: '/home',
                 views: {
                     'shellContentView@shell': {
-                        templateUrl: 'home/templates/home-template.html',
+                        templateUrl: 'home/templates/home.template.html',
                         controller: 'homeController',
                         controllerAs: 'vm'
                     }
