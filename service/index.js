@@ -24,7 +24,7 @@ ServiceGenerator.prototype.askFor = function askFor() {
 
     var prompts = [{
         type: 'confirm',
-        name: 'needtemplate',
+        name: 'isCommand',
         message: 'Will this service act as a command?',
         default: false
     }];
@@ -35,8 +35,8 @@ ServiceGenerator.prototype.askFor = function askFor() {
         if (props.name) {
             this.name = props.name;
         }
-        this.needtemplate = props.needtemplate;
-        cgUtils.askForModuleAndDir('service', this, false, cb); //Tapas: no need to ask for own directory(this.needtemplate)
+        this.isCommand = props.isCommand;
+        cgUtils.askForModuleAndDir('service', this, false, cb); //Tapas: no need to ask for own directory(this.isCommand)
     }.bind(this));
 
 };
@@ -45,14 +45,16 @@ ServiceGenerator.prototype.files = function files() {
 
     var configName = 'serviceSimpleTemplates';
     var defaultDir = 'templates/simple';
-    if (this.needtemplate) {
-        configName = 'serviceComplexTemplates';
+    var suffix     = 'service';
+    if (this.isCommand) {
+        configName = 'commandComplexTemplates';
         defaultDir = 'templates/complex';
+        suffix     = 'command';
     }
 
     this.htmlPath = path.join(this.dir, this.name + '.service.html').replace(/\\/g, '/');
     this.htmlPath = this.htmlPath.replace('app/', '');
 
-    cgUtils.processTemplates(this.name, this.dir, 'service', this, defaultDir, configName, this.module);
+    cgUtils.processTemplates(this.name, this.dir, suffix, this, defaultDir, configName, this.module);
 
 };
