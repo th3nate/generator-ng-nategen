@@ -36,17 +36,22 @@ ServiceGenerator.prototype.askFor = function askFor() {
             this.name = props.name;
         }
         this.isCommand = props.isCommand;
-        cgUtils.askForModuleAndDir('service', this, true, cb); //Tapas: no need to ask for own directory(this.isCommand)
+        cgUtils.askForModuleAndDir('service', this, false, cb); //Tapas: no need to ask for own directory(this.isCommand)
     }.bind(this));
 
 };
 
 ServiceGenerator.prototype.files = function files() {
 
-    var configName = 'serviceSimpleTemplates';
-    var defaultDir = 'templates/simple';
-    var suffix     = 'service';
-    if (this.isCommand) {
+    var configName = '';
+    var defaultDir = '';
+    var suffix     = '';
+
+    if (!this.isCommand) {
+        configName = 'serviceSimpleTemplates';
+        defaultDir = 'templates/simple';
+        suffix     = 'service';
+    }else{
         configName = 'serviceComplexTemplates';
         defaultDir = 'templates/complex';
         suffix     = 'command';
