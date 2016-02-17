@@ -36,7 +36,7 @@ ServiceGenerator.prototype.askFor = function askFor() {
             this.name = props.name;
         }
         this.isCommand = props.isCommand;
-        cgUtils.askForModuleAndDir('service', this, false, cb); //Tapas: no need to ask for own directory(this.isCommand)
+        cgUtils.askForModuleAndDir('service', this, true, cb); //Tapas: no need to ask for own directory(this.isCommand)
     }.bind(this));
 
 };
